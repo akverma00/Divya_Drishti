@@ -8,7 +8,7 @@ Facial expression for emotion detection has always been an easy task for humans,
 
 :golf: Our Stress Detector Classifier Model can take input via following ways : :point_down:
 - **Real-time Video input** <br>
-<img width="891" alt="nuetral" src="https://drive.google.com/file/d/1RW0LhgjtL0oXfcsRd3eMzkCJK-W_LCdV/view?usp=sharing"><br>
+
 - **Upload Images from the System** <br>
 <img width="896" alt="sad" src="https://user-images.githubusercontent.com/57671048/98131077-f103d580-1ee0-11eb-9dc3-905f3884ee1b.png"><br>
 - **Provide URL of the Image** <br>
