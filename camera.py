@@ -11,7 +11,7 @@ model = FacialExpressionModel("model.json", "model_weights.h5")
 # Loading the classifier from the file.
 facec = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 list_for_emotional_weight=[]
-
+a = time.monotonic()
 
 ###################################################################################
 # Sending SMS 
@@ -20,11 +20,12 @@ list_for_emotional_weight=[]
 # If you want to test it , please add your account credentials
 
 
-csms=0
+
 def send_alert():
-    global csms
-    if(csms==0):
-        csms=1
+    global a
+    b = time.monotonic()
+    if((b-a)>120):
+        a=b
         account_sid = 'ACa0e1648cd8a36f6790e41fb4a6067774' 
         auth_token = '5ca3718eee2a7aa6240f4561f3f6fb65' 
         client = Client(account_sid, auth_token) 
@@ -36,8 +37,6 @@ def send_alert():
                                 ) 
     
     print("Patient is sad :( ")
-
-
 
 
 ###################################################################################
