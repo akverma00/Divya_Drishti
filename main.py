@@ -117,6 +117,24 @@ def Start():
 
     return render_template('Start.html')
 
+@app.route('/MedTime')
+def MedTime():
+    """ Renders the Home Page """
+
+    return render_template('MedTime.html')
+
+
+@app.route('/History')
+def History():
+    """ Renders the Home Page """
+
+    return render_template('History.html')
+
+@app.route('/Profile')
+def Profile():
+    """ Renders the Home Page """
+
+    return render_template('Profile.html')    
 
 @app.route('/video_feed')
 def video_feed():

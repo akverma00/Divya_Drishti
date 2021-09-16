@@ -11,7 +11,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  
   <style>
     body{
       margin:0;
@@ -69,17 +71,73 @@
       cursor: pointer;
 
     }
+   a.profile{
+  position: absolute;
+  right: 0;
+  width: 100px;
+  height: 120px;
+  border: 0px solid blue;
+} 
   </style>
-
-  <title>Facial Emotion Investigator</title>
-
+<style>
+  body {margin:0;}
+  
+  .nvbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .nvbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .nvbar a:hover {
+    background: #ddd;
+    color: black;
+  }
+  
+  .main {
+    padding: 16px;
+    margin-top: 30px;
+    height: 1500px; /* Used in this example to enable scrolling */
+  }
+  </style>
+  <title>Advanced Health Care Monitoring System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
 
 <body>
+ 
 
   <!--Heading section-->
+
+
+
+
+
   <div class="a" style="background-color:#FFE3DE;margin-top:0;position:relative;">
     <div class="container"></div>
+    <!-- Navbar sec -->
+    <div class="nvbar">
+      <a href="/">Home</a>
+      <a href="#real-time">Live Report</a>
+      <a href="/MedTime">Medicine Timing</a>
+      <a href="/History">History</a>
+      <!-- <a href="#contact">Call Doctor</a> -->
+      <a href="/Profile" class="profile">Profile</a>
+      
+    </div>
+
+<!-- nav end -->
     <div style="display:flex;flex-direction:column; align-items:center;
   justify-content:center;
   text-align:center;">
@@ -89,9 +147,11 @@
     justify-content:center;text-align:center;background-color:#0A043C;margin:30px;color:white">
     <div class="animation-area .container-sm" style="height: 80vh;width:90%;display:flex;flex-direction:column; align-items:center;
     justify-content:center;text-align:center;background-color:#03506F;margin:30px;color:white;">
-    <div style="display: flex;flex-direction:row">
-      <p style="font-size: 70px;">Stress Investigator</p>
-      <img style="margin-left:-120px" src="../static/undraw_the_search_s0xf (1) 1.svg" alt="">
+   <img style="margin-left:40%" height="200px" src="../static/logo.jpeg" alt="">
+  <div style="display: flex;flex-direction:row">
+     
+      <p style="font-size: 70px;">Divya Drishti</p>
+      
     </div>
    
   </div>
@@ -111,17 +171,15 @@
     <div class="SLIDESHOW" >
   
       <img class="mySlides" width=90% height=400px
-        src="https://www.apa.org/images/PSA-2011-05-matsumoto-fig1_tcm7-115934_w1024_n.jpg" style="display:block">
-      <img class="mySlides" width=90% height=400px
-        src="https://user-images.githubusercontent.com/57671048/98131265-1e508380-1ee1-11eb-92b5-12c7677c08c0.png"
+        src="static\c1.jpeg" >
+        <img class="mySlides" width=90% height=400px
+        src="static\c2.jpg" >
+      <img class="mySlides" width=110% height=400px
+        src="static\Screenshot (83).png"
+        >
+        <img class="mySlides" width=110% height=400px
+        src="static\Screenshot (84).png"
         style="display:block">
-      <img class="mySlides" width=90% height=400px
-        src="https://user-images.githubusercontent.com/57671048/98131077-f103d580-1ee0-11eb-9dc3-905f3884ee1b.png"
-        style="display:block">
-      <img class="mySlides" width=90% height=400px
-        src="https://user-images.githubusercontent.com/57671048/98131204-10026780-1ee1-11eb-999b-0182a68ce529.png"
-        style="display:block">
-   
     </div>
     
  
@@ -131,17 +189,17 @@
 
 
   <!--Real time section-->
-  <div style="display:flex;flex-direction:column; align-items:center;
+  <div id="real-time" style="display:flex;flex-direction:column; align-items:center;
   justify-content:center;
   text-align:center;">
     <div class="animation-area" style="height: 100vh;width:100%;display:flex;flex-direction:column; align-items:center;
     justify-content:center;text-align:center;">
     <div class="animation-area .container-sm" style="height: 70vh;width:70%;display:flex;flex-direction:column; align-items:center;
     justify-content:center;text-align:center;background-color:#0A043C;margin:30px;color:white">
-    <p style="font-size:xx-large;padding-bottom:50px;" >Real time image</p>
-    <p style="font-size:x-large;padding-bottom:20px;">To detect your emotion using the webcam feed</p>
+    <p style="font-size:xx-large;padding-bottom:50px;" >Live Video Feed</p>
+    <p style="font-size:x-large;padding-bottom:20px;">To detect your condition using the webcam feed</p>
     <form action="/RealTime" method="post">
-      <input type="submit" name="Real Time Image" value="Real Time Image" class="button" />
+      <input type="submit" name="Real Time Image" value="Real Time " class="button" />
     </form>
  
 </div>
@@ -160,7 +218,7 @@
     <div class="animation-area .container-sm" style="height: 70vh;width:70%;display:flex;flex-direction:column; align-items:center;
     justify-content:center;text-align:center;background-color:#0A043C;margin:30px;color:white">
     <p style="font-size:xx-large;padding-bottom:50px;">Manually Upload Image</p>
-    <p style="font-size:x-large;padding-bottom:20px;">To detect the emotion based on images you upload from your system or images fetched from url</p>
+    <p style="font-size:x-large;padding-bottom:20px;">To detect the condition based on images you upload from your system or images fetched from url</p>
       <form action="/ManualUpload" method="post">
         <input type="submit" name="Manually Upload Image" value="Manually Upload Image" class="button" />
       </form>
@@ -188,6 +246,7 @@
     }
 
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 
 </html>

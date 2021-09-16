@@ -1,7 +1,9 @@
 # Let us import the Libraries required.
 import cv2
 import numpy as np
-from twilio.rest import Client 
+import time
+# from twilio.rest import Client 
+import vonage
 
 from model import FacialExpressionModel
 
@@ -20,23 +22,28 @@ a = time.monotonic()
 # If you want to test it , please add your account credentials
 
 
-
+f=1
 def send_alert():
     global a
+    global f
     b = time.monotonic()
-    if((b-a)>120):
+    if((b-a)>15):
+        f=0
         a=b
-        account_sid = 'ACa0e1648cd8a36f6790e41fb4a6067774' 
-        auth_token = '5ca3718eee2a7aa6240f4561f3f6fb65' 
-        client = Client(account_sid, auth_token) 
-        
-        message = client.messages.create(  
-                                    messaging_service_sid='MG4e8b8464fc8ef507366a16825e611d1e', 
-                                    body='Alert Patient is SAD , please hurry !!',      
-                                    to='+917488160265' 
-                                ) 
-    
-    print("Patient is sad :( ")
+        client = vonage.Client(key="222ce96c", secret="11bYzrXnbKOi2fb7")
+        sms = vonage.Sms(client)
+        responseData = sms.send_message(
+               {
+                  "from": "Vonage APIs",
+                     "to": "917488160265",
+                     "text": "Please hurry \nPatient is sad\n",
+                 }
+                )
+
+        if responseData["messages"][0]["status"] == "0":
+           print("Message sent successfully.")
+        else:
+            print(f"Message failed with error: {responseData['messages'][0]['error-text']}")
 
 
 ###################################################################################
@@ -92,8 +99,8 @@ class VideoCamera(object):
             Text = str(prediction) + Symbols[str(prediction)]
             Text_Color = (180, 105, 255)
             # print(Text)
-            print(len(list_for_emotional_weight))
-            if (len(list_for_emotional_weight)<300):
+            # print(len(list_for_emotional_weight))
+            if (len(list_for_emotional_weight)<50):
                 
                 list_for_emotional_weight.insert(0,Text)
             else:
@@ -101,13 +108,14 @@ class VideoCamera(object):
                 list_for_emotional_weight.insert(0,Text)
 
                 count_sad=list_for_emotional_weight.count('Sad:}') 
-                if (count_sad > 250):
+                if (count_sad > 10):
                     send_alert()
 
 
 
-            Thickness = 2
-            Font_Scale = 1
+
+            Thickness = 5
+            Font_Scale = 2
             Font_Type = cv2.FONT_HERSHEY_SIMPLEX
 
             # Inserting the Text on Image
